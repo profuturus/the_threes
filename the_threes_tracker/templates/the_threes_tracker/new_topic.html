@@ -1,0 +1,12 @@
+
+{% extends "the_threes_tracker/base.html" %}
+
+{% block content %}
+  <p>Add a new topic:</p>
+  <form action="{% url 'the_threes_tracker:new_topic' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add new 'three'</button>
+  </form>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+
+{% extends "the_threes_tracker/base.html" %}
+
+{% block content %}
+
+  <p>Topics</p>
+
+  <ul>
+    {% for topic in topics %}
+      <li>
+        <a href="{% url 'the_threes_tracker:topic' topic.id %}">{{ topic }}</a>
+      </li>
+    {% empty %}
+      <li>No entries have been made yet</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'the_threes_tracker:new_topic' %}">Add a new topic: </a>
+
+{% endblock content %}

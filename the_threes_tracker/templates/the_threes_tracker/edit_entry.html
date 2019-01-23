@@ -1,0 +1,17 @@
+
+{% extends "the_threes_tracker/base.html" %}
+
+{% block content %}
+
+  <p><a href="{% url 'the_threes_tracker:topic' topic.id %}">{{ topic }}</a></p>
+
+  <p>Edit entry:</p>
+
+  <form action="{% url 'the_threes_tracker:edit_entry' entry_id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">save changes</button>
+  </form>
+
+{% endblock content %}
+  
