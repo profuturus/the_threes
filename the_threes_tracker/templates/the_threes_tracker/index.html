@@ -2,14 +2,24 @@
 
 {% extends "the_threes_tracker/base.html" %}
 
+{% block header %}
+  <div class="jumbotron">
+    <h1>Improvement Journal</h1>
+  </div>
+{% endblock header %}
+
 {% block content %}
-
-  <p>The Threes is a journal for three entries on a variety of topics, such as:</p>
-  <p>    - What are three things you are grateful for today?</p>
-  <p>    - What are three things you did well today?</p>
-  <p>    - What are three things you could have done better?</p>
-  <p>    - what were three acts of beauty or kindness you saw today?</p>
-  <p></p>
-  <p>And more... </p>
-
+  <h3>
+    <a href="{% url 'users:register' %}">Register an account</a> to make
+    your own 'The Threes' Journal, to track, learn, and improve.
+  </h3>
+  <h3>
+        <p>The Threes is a journal for three entries on a variety of topics, such as:</p>
+        <p>    - What are three things you are grateful for today?</p>
+        <p>    - What are three things you did well today?</p>
+        <p>    - What are three things you could have done better?</p>
+        <p>    - what were three acts of beauty or kindness you saw today?</p>
+        <p></p>
+        <p>- And more... </p>
+  </h3>
 {% endblock content %}

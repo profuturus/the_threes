@@ -1,20 +1,25 @@
 
 {% extends "the_threes_tracker/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>Topics</h2>
+{% endblock header %}
 
 {% block content %}
-
-  <p>Topics</p>
 
   <ul>
     {% for topic in topics %}
       <li>
-        <a href="{% url 'the_threes_tracker:topic' topic.id %}">{{ topic }}</a>
+        <h3>
+          <a href="{% url 'the_threes_tracker:topic' topic.id %}">{{ topic }}</a>
+        </h3>
       </li>
     {% empty %}
       <li>No entries have been made yet</li>
     {% endfor %}
   </ul>
 
-  <a href="{% url 'the_threes_tracker:new_topic' %}">Add a new topic: </a>
+  <a href="{% url 'the_threes_tracker:new_topic' %}" class="btn btn-info" role="button">Add new topic</a>
 
 {% endblock content %}
