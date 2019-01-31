@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '($-yqt8^c69f+g*$6x3=(+1db711h!=np16%^7#1x90y8@%vs5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -150,7 +150,9 @@ if cwd == '/app' or cwd[:4] =='/tmp':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Allow all host headers
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['the-threes-journal.herokuapp.com']
+
+    DEBUG=False
 
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
