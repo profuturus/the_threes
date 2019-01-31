@@ -23,7 +23,7 @@ def register(request):
             new_user = form.save()
             # Log the user in and then redirect to home page
             authenticated_user = authenticate(username=new_user.username,
-                password=request.POST['password1'])
+                password=request.POST['password1'],)
             login(request, authenticated_user)
             return HttpResponseRedirect(reverse('the_threes_tracker:index'))
 
