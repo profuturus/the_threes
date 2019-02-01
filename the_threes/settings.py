@@ -26,7 +26,7 @@ SECRET_KEY = '($-yqt8^c69f+g*$6x3=(+1db711h!=np16%^7#1x90y8@%vs5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -62,7 +62,7 @@ ROOT_URLCONF = 'the_threes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'the_threes/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -149,7 +149,7 @@ if cwd == '/app' or cwd[:4] =='/tmp':
     # Honor the 'X-forward-Proto' header for request.is_secure().
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-    # Allow all host headers
+    # Allow only Heroku to host the project
     ALLOWED_HOSTS = ['the-threes-journal.herokuapp.com']
 
     DEBUG=False
