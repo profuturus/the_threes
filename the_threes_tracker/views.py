@@ -77,7 +77,7 @@ def new_entry(request, topic_id):
 @login_required
 def edit_entry(request, entry_id):
     ''' Edit an existing entry '''
-    entry = get_object_or_404(Entry, id=topic_id)
+    entry = get_object_or_404(Entry, id=entry_id)
     topic = entry.topic
     check_topic_owner(request, topic)
     if request.method != 'POST':
