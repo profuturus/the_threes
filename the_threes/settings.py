@@ -13,6 +13,13 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 from dotenv import load_dotenv
 
+# This is code put in to work with DigitalOcean. It will try to access "Local_settings.py" in the DigitalOcean
+    # droplet app file for things such as SECRET_KEY, and ALLOWED_HOST, etc... that will be specific to the local
+    # environment on this server
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
